@@ -1,8 +1,8 @@
 Package: lavacreg
 Type: Package
 Title: Latent Variable Count Regression Models
-Version: 0.1-1
-Date: 2021-03-01
+Version: 0.1-2
+Date: 2021-08-19
 Authors@R: c(person("Christoph", "Kiefer", 
                     email = "christoph.kiefer@uni-bielefeld.de", 
                     role = c("cre", "aut"), 
@@ -19,15 +19,16 @@ URL: https://github.com/chkiefer/lavacreg
 BugReports: https://github.com/chkiefer/lavacreg/issues
 LazyData: true
 Depends: R (>= 3.5.0)
-Imports: Rcpp (>= 1.0.5), fastGHQuad, pracma, methods, stats
+Imports: Rcpp (>= 1.0.5), fastGHQuad, pracma, methods, stats,
+        SparseGrid
 LinkingTo: Rcpp
 RoxygenNote: 7.1.1
 Suggests: knitr, rmarkdown, testthat
 VignetteBuilder: knitr
 SystemRequirements: C++11
 NeedsCompilation: yes
-Packaged: 2021-03-01 15:57:49 UTC; Christoph
+Packaged: 2021-08-19 14:51:06 UTC; christoph
 Author: Christoph Kiefer [cre, aut] (<https://orcid.org/0000-0002-9166-400X>)
 Maintainer: Christoph Kiefer <christoph.kiefer@uni-bielefeld.de>
 Repository: CRAN
-Date/Publication: 2021-03-02 23:00:03 UTC
+Date/Publication: 2021-08-19 17:20:02 UTC
