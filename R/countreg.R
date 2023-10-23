@@ -55,7 +55,8 @@ countreg <- function(forml,
   object <- new("lavacreg")
 
   # Create, process and save function input
-  object@input <- creg_create_input(
+  # TODO: maybe use matchcall or something similar
+  object@input <- creg_input(
     forml = forml,
     lv = lv,
     group = group,
@@ -66,13 +67,27 @@ countreg <- function(forml,
     creg_options = creg_options
   )
 
-  # Create datalist
+  # Create partable
+  object@partable <- creg_partable(object@input)
+
+  # Constraints
+  object@constraints <- creg_constraints(object)
+
+  # Datalist
   # i.e., split data in group-conditional datasets of dv and covariates
-  object@dataobj <- creg_create_datalist(object, data)
+  object@datalist <- creg_datalist(object@input)
+
+  # GH grid
+  object@gh_grid <- creg_gh_grid(object@input)
 
   # Start estimation process
-  # TODO: seperate model and standard error estimation
-  object <- creg_fit_model(object)
+  object@x_start <- creg_startvals(object)
+
+  # model estimation
+  object <- creg_model_estimate(object)
+
+  # Standard error estimation
+  object@vcov <- creg_vcov(object)
 
   # Return all information back to the user
   return(object)
