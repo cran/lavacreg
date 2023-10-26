@@ -1,8 +1,8 @@
 Package: lavacreg
 Type: Package
 Title: Latent Variable Count Regression Models
-Version: 0.2-0
-Date: 2023-10-22
+Version: 0.2-1
+Date: 2023-10-25
 Authors@R: c(person("Christoph", "Kiefer", 
                     email = "christoph.kiefer@uni-bielefeld.de", 
                     role = c("cre", "aut"), 
@@ -27,8 +27,8 @@ Suggests: knitr, rmarkdown, testthat
 Encoding: UTF-8
 VignetteBuilder: knitr
 NeedsCompilation: yes
-Packaged: 2023-10-23 13:10:24 UTC; ckiefer
+Packaged: 2023-10-25 12:09:49 UTC; ckiefer
 Author: Christoph Kiefer [cre, aut] (<https://orcid.org/0000-0002-9166-400X>)
 Maintainer: Christoph Kiefer <christoph.kiefer@uni-bielefeld.de>
 Repository: CRAN
-Date/Publication: 2023-10-23 13:30:02 UTC
+Date/Publication: 2023-10-26 07:20:05 UTC
