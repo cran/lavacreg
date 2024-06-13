@@ -70,7 +70,9 @@ creg_model_estimate <- function(object) {
 
   # Pass start values x and objective function to optimizer
   # TODO: maybe allow for different optimizers
-  fit <- nlminb(x_start, objective_function,
+  fit <- nlminb(
+    start = x_start,
+    objective = objective_function,
     control = list(
       rel.tol = 1e-10,
       eval.max = 200, # 500
@@ -154,6 +156,7 @@ creg_model_objective <- function(datalist, modellist) {
     mu_z <- modellist_g$mu_z
     Sigma_z <- modellist_g$Sigma_z
     Sigma_z_lv <- modellist_g$Sigma_z_lv
+    fixed_z <- modellist_g$fixed_z
     dims <- modellist_g$dims
 
     if (any(!is.na(Sigma_z))) {
@@ -183,7 +186,7 @@ creg_model_objective <- function(datalist, modellist) {
       mu_eta = mu_eta, Sigma_eta = Sigma_eta,
       fixeta = gh_grid$X, ghweight = gh_grid$W,
       mu_z = mu_z, Sigma_z = Sigma_z, Sigma_z_lv = Sigma_z_lv,
-      cores = 1
+      fixed_z = fixed_z, cores = 1
     )
     if (is.na(obj_i)) {
       return(-Inf)
